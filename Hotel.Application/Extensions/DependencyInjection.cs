@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Hotel.Application.Profiles;
 using Hotel.Application.Services;
 using Hotel.Domain.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,10 @@ public static class DependencyInjection
         services.AddMediatR(config
             => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
+        services.AddAutoMapper(typeof(RoomProfile));
+        
+        services.AddScoped<IRoomService, RoomService>();
+        
         return services;
     }
 }
