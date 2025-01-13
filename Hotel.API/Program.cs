@@ -1,3 +1,4 @@
+using Hotel.Application.Extensions;
 using Hotel.Infrastructure.Contexts;
 using Hotel.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddRepositories();
+builder.Services.AddServices();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnectionString")));
