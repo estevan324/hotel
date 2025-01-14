@@ -6,4 +6,4 @@ public record RoomDto(
     int Number,
     RoomType Type,
     double PricePerNight,
-    Guid? Id);
+    Guid? Id = null);

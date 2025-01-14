@@ -5,7 +5,7 @@ namespace Hotel.Domain.Services;
 
 public interface IRoomService
 {
-    Task<IList<Room>> GetAllAsync(Func<Room, bool>? where);
+    Task<IList<Room>> GetAllAsync(Func<Room, bool>? where = null);
     Task<Room> GetByIdAsync(Guid id);
     Task<Room> AddAsync(RoomDto roomDto);
     Task<Room> UpdateAsync(Guid id, RoomDto roomDto);
